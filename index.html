@@ -7,238 +7,152 @@
   <style>
     :root {
       --primary: #1f3a5f;
-      --secondary: #4f6d7a;
       --accent: #e0a458;
       --background: #f5f7fa;
       --text: #2b2b2b;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background-color: var(--background);
       color: var(--text);
       line-height: 1.7;
     }
-
-    /* Header & Navigation */
     header {
-      position: sticky;
-      top: 0;
-      background: var(--primary);
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky; top: 0; background: var(--primary); z-index: 1000;
     }
-
     nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
+      max-width: 1200px; margin: auto; display: flex;
+      justify-content: space-between; align-items: center; padding: 1rem 2rem;
     }
-
-    nav h1 {
-      color: #ffffff;
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.95rem;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: var(--accent);
-    }
-
-    /* Sections */
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 4rem 2rem;
-    }
-
-    section:nth-child(even) {
-      background-color: #ffffff;
-    }
-
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
-    p {
-      max-width: 900px;
-      font-size: 1rem;
-    }
-
-    /* Lists */
-    ul.content-list {
-      margin-top: 1.5rem;
-      max-width: 900px;
-    }
-
-    ul.content-list li {
-      margin-bottom: 1rem;
-      padding-left: 1rem;
-      border-left: 4px solid var(--accent);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--primary);
-      color: #ffffff;
-      padding: 2.5rem 2rem;
-    }
-
-    footer div {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    footer h3 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-    }
-
-    footer p {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-    }
+    nav h1 { color: #fff; font-size: 1.3rem; }
+    nav ul { list-style: none; display: flex; gap: 1.2rem; flex-wrap: wrap; }
+    nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; }
+    nav ul li a:hover { color: var(--accent); }
+    section { max-width: 1200px; margin: auto; padding: 4rem 2rem; }
+    section:nth-child(even) { background: #fff; }
+    h2 { color: var(--primary); margin-bottom: 1rem; font-size: 2rem; }
+    ul.content-list { margin-top: 1.5rem; max-width: 900px; }
+    ul.content-list li { margin-bottom: 1rem; padding-left: 1rem; border-left: 4px solid var(--accent); }
+    footer { background: var(--primary); color: #fff; padding: 2.5rem 2rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    .lang-es { display: none; }
   </style>
+  <script>
+    function setLanguage(lang) {
+      document.querySelectorAll('.lang-en').forEach(e => e.style.display = lang === 'en' ? 'block' : 'none');
+      document.querySelectorAll('.lang-es').forEach(e => e.style.display = lang === 'es' ? 'block' : 'none');
+    }
+  </script>
 </head>
-<body>
+<body onload="setLanguage('en')">
 
-  <header>
-    <nav>
-      <h1>Roberto Delgado Castro</h1>
-      <ul>
-        <li><a href="#biography">Biography</a></li>
-        <li><a href="#books">Books</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#articles">Articles (Interactive Brokers)</a></li>
-        <li><a href="#conferences">Conferences</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav>
+    <h1>Roberto Delgado Castro</h1>
+    <ul>
+      <li><a href="#biography">Biography / Biografía</a></li>
+      <li><a href="#books">Books / Libros</a></li>
+      <li><a href="#research">Research / Investigaciones</a></li>
+      <li><a href="#articles">Articles / Artículos</a></li>
+      <li><a href="#conferences">Conferences / Conferencias</a></li>
+      <li><a href="#" onclick="setLanguage('en')">EN</a> | <a href="#" onclick="setLanguage('es')">ES</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <section id="biography">
+<section id="biography">
+  <div class="lang-en">
     <h2>Biography</h2>
-    <p>
-      Roberto Delgado Castro is an academic and researcher specialized in data science, applied econometrics,
-      energy analysis, and predictive modeling. His work focuses on the application of advanced quantitative
-      methods to economic, financial, and energy-related problems, combining academic rigor with a
-      practical, decision-oriented approach.
-    </p>
-  </section>
+    <p>Roberto Delgado Castro is an academic and researcher specialized in data science, applied econometrics, energy analysis, and predictive modeling. His work focuses on the application of advanced quantitative methods to economic, financial, and energy-related problems, combining academic rigor with a practical, decision-oriented approach.</p>
+  </div>
+  <div class="lang-es">
+    <h2>Biografía</h2>
+    <p>Roberto Delgado Castro es un académico e investigador especializado en ciencia de datos, econometría aplicada, análisis energético y modelos predictivos. Su trabajo se centra en la aplicación de métodos cuantitativos avanzados al análisis de problemas económicos, financieros y energéticos, combinando rigor académico con una visión práctica orientada a la toma de decisiones.</p>
+  </div>
+</section>
 
-  <section id="books">
+<section id="books">
+  <div class="lang-en">
     <h2>Books</h2>
     <ul class="content-list">
-      <li>
-        <strong>Practical Guide to ARIMA and Holt-Winters Models in R</strong><br />
-        An applied approach to manual calibration and interpretation of time series models.
-      </li>
-      <li>
-        <strong>Introduction to Data Science Applied to Economics</strong><br />
-        Theoretical foundations and practical applications using R.
-      </li>
+      <li><strong>Practical Guide to ARIMA and Holt-Winters Models in R</strong> – Applied manual calibration of time series models.</li>
+      <li><strong>Introduction to Data Science Applied to Economics</strong> – Theory and applications using R.</li>
     </ul>
-  </section>
+  </div>
+  <div class="lang-es">
+    <h2>Libros</h2>
+    <ul class="content-list">
+      <li><strong>Guía práctica de modelos ARIMA y Holt-Winters en R</strong> – Calibración manual aplicada a series de tiempo.</li>
+      <li><strong>Introducción a la ciencia de datos aplicada a la economía</strong> – Fundamentos teóricos y aplicaciones con R.</li>
+    </ul>
+  </div>
+</section>
 
-  <section id="research">
+<section id="research">
+  <div class="lang-en">
     <h2>Research</h2>
     <ul class="content-list">
-      <li>
-        Application of Hierarchical Clustering to global oil demand (2019–2023).
-      </li>
-      <li>
-        Principal Component Analysis of employment rates in Latin America (2000–2023).
-      </li>
-      <li>
-        Predictive models and neural networks applied to economic and financial time series.
-      </li>
+      <li>Hierarchical clustering applied to global oil demand (2019–2023).</li>
+      <li>Principal Component Analysis of employment rates in Latin America (2000–2023).</li>
+      <li>Predictive models and neural networks for economic and financial time series.</li>
     </ul>
-  </section>
-
-  <section id="articles">
-    <h2>Articles Published on Interactive Brokers</h2>
+  </div>
+  <div class="lang-es">
+    <h2>Investigaciones</h2>
     <ul class="content-list">
-      <li>
-        Quantitative analysis of international energy markets.
-      </li>
-      <li>
-        The impact of the energy transition on financial markets.
-      </li>
+      <li>Aplicación del clúster jerárquico a la demanda mundial de petróleo (2019–2023).</li>
+      <li>Análisis de Componentes Principales de las tasas de ocupación en América Latina (2000–2023).</li>
+      <li>Modelos predictivos y redes neuronales aplicados a series económicas y financieras.</li>
     </ul>
-  </section>
+  </div>
+</section>
 
-  <section id="conferences">
+<section id="articles">
+  <div class="lang-en">
+    <h2>Articles (Interactive Brokers)</h2>
+    <ul class="content-list">
+      <li>Quantitative analysis of international energy markets.</li>
+      <li>The impact of the energy transition on financial markets.</li>
+    </ul>
+  </div>
+  <div class="lang-es">
+    <h2>Artículos (Interactive Brokers)</h2>
+    <ul class="content-list">
+      <li>Análisis cuantitativo del mercado energético internacional.</li>
+      <li>Impacto de la transición energética en los mercados financieros.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="conferences">
+  <div class="lang-en">
     <h2>Conferences</h2>
     <ul class="content-list">
-      <li>
-        Data science applied to economics and finance.
-      </li>
-      <li>
-        Energy transition and statistical analysis of oil markets.
-      </li>
-      <li>
-        Predictive modeling and machine learning in R.
-      </li>
+      <li>Data science applied to economics and finance.</li>
+      <li>Energy transition and statistical analysis of oil markets.</li>
+      <li>Predictive modeling and machine learning in R.</li>
     </ul>
-  </section>
+  </div>
+  <div class="lang-es">
+    <h2>Conferencias</h2>
+    <ul class="content-list">
+      <li>Ciencia de datos aplicada a la economía y las finanzas.</li>
+      <li>Transición energética y análisis estadístico del mercado petrolero.</li>
+      <li>Modelos predictivos y aprendizaje automático en R.</li>
+    </ul>
+  </div>
+</section>
 
-  <footer>
-    <div>
-    <h3>Contact</h3>
-      <p>Email: <a href="mailto:robdelcas@gmail.com">robdelcas@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/roberto-delgado-ba397b18a" target="_blank">linkedin.com/in/roberto-delgado-ba397b18a</a></p>
-      <p>ORCID: <a href="https://orcid.org/0000-0003-3828-9500" target="_blank">https://orcid.org/0000-0003-3828-9500</a></p>
-    </div>
-  </footer>
+<footer>
+  <h3>Contact / Contacto</h3>
+  <p>Email: <a href="mailto:robdelcas@gmail.com">robdelcas@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://www.linkedin.com/in/roberto-delgado-ba397b18a" target="_blank">linkedin.com/in/roberto-delgado-ba397b18a</a></p>
+  <p>ORCID: <a href="https://orcid.org/0000-0003-3828-9500" target="_blank">0000-0003-3828-9500</a></p>
+</footer>
 
 </body>
 </html>
+
 
 
