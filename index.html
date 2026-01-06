@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roberto Delgado Castro | Academic Website</title>
+  <style>
+    :root {
+      --primary: #1f3a5f;
+      --secondary: #4f6d7a;
+      --accent: #e0a458;
+      --background: #f5f7fa;
+      --text: #2b2b2b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--primary);
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    nav h1 {
+      color: #ffffff;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    section:nth-child(even) {
+      background-color: #ffffff;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    p {
+      max-width: 900px;
+      font-size: 1rem;
+    }
+
+    /* Lists */
+    ul.content-list {
+      margin-top: 1.5rem;
+      max-width: 900px;
+    }
+
+    ul.content-list li {
+      margin-bottom: 1rem;
+      padding-left: 1rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 2.5rem 2rem;
+    }
+
+    footer div {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer h3 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+
+    footer p {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>Roberto Delgado Castro</h1>
+      <ul>
+        <li><a href="#biography">Biography</a></li>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#articles">Articles (Interactive Brokers)</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="biography">
+    <h2>Biography</h2>
+    <p>
+      Roberto Delgado Castro is an academic and researcher specialized in data science, applied econometrics,
+      energy analysis, and predictive modeling. His work focuses on the application of advanced quantitative
+      methods to economic, financial, and energy-related problems, combining academic rigor with a
+      practical, decision-oriented approach.
+    </p>
+  </section>
+
+  <section id="books">
+    <h2>Books</h2>
+    <ul class="content-list">
+      <li>
+        <strong>Practical Guide to ARIMA and Holt-Winters Models in R</strong><br />
+        An applied approach to manual calibration and interpretation of time series models.
+      </li>
+      <li>
+        <strong>Introduction to Data Science Applied to Economics</strong><br />
+        Theoretical foundations and practical applications using R.
+      </li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <ul class="content-list">
+      <li>
+        Application of Hierarchical Clustering to global oil demand (2019–2023).
+      </li>
+      <li>
+        Principal Component Analysis of employment rates in Latin America (2000–2023).
+      </li>
+      <li>
+        Predictive models and neural networks applied to economic and financial time series.
+      </li>
+    </ul>
+  </section>
+
+  <section id="articles">
+    <h2>Articles Published on Interactive Brokers</h2>
+    <ul class="content-list">
+      <li>
+        Quantitative analysis of international energy markets.
+      </li>
+      <li>
+        The impact of the energy transition on financial markets.
+      </li>
+    </ul>
+  </section>
+
+  <section id="conferences">
+    <h2>Conferences</h2>
+    <ul class="content-list">
+      <li>
+        Data science applied to economics and finance.
+      </li>
+      <li>
+        Energy transition and statistical analysis of oil markets.
+      </li>
+      <li>
+        Predictive modeling and machine learning in R.
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <div>
+      <h3>Contact</h3>
+      <p>Email: <a href="mailto:roberto.delgado@email.com">roberto.delgado@email.com</a></p>
+      <p>LinkedIn: <a href="#">linkedin.com/in/roberto-delgado</a></p>
+      <p>ORCID / Google Scholar: Coming soon</p>
+    </div>
+  </footer>
+
+</body>
+</html>
