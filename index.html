@@ -25,7 +25,11 @@
       max-width: 1200px; margin: auto; display: flex;
       justify-content: space-between; align-items: center; padding: 1rem 2rem;
     }
-    nav h1 { color: #fff; font-size: 1.3rem; }
+    nav h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
     nav ul { list-style: none; display: flex; gap: 1.2rem; flex-wrap: wrap; }
     nav ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; }
     nav ul li a:hover { color: var(--accent); }
@@ -45,21 +49,41 @@
 }
 
 .profile-img {
-  width: 56px;
-  height: 56px;
+  width: 85px;
+  height: 85px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  border: 3px solid var(--accent);
   background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
 }
 
 /* Versión móvil */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .profile-container {
+    justify-content: center;
+  }
+
   .profile-img {
-    width: 42px;
-    height: 42px;
+    width: 70px;
+    height: 70px;
+  }
+
+  nav ul {
+    justify-content: center;
   }
 }
+
 
   </style>
   <script>
@@ -283,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
