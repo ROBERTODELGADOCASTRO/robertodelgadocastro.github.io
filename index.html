@@ -84,6 +84,25 @@
   }
 }
 
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.profile-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+  .profile-subtitle {
+    font-size: 0.75rem;
+  }
+}
 
   </style>
   <script>
@@ -311,6 +330,7 @@
 
 </body>
 </html>
+
 
 
 
