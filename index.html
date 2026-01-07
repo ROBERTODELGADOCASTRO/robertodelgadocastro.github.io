@@ -37,6 +37,30 @@
     footer { background: var(--primary); color: #fff; padding: 2.5rem 2rem; }
     footer a { color: var(--accent); text-decoration: none; }
     .lang-es { display: none; }
+
+    .profile-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: #fff;
+}
+
+/* Versión móvil */
+@media (max-width: 600px) {
+  .profile-img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
   </style>
   <script>
     function setLanguage(lang) {
@@ -48,8 +72,12 @@
 <body onload="setLanguage('en')">
 
 <header>
-  <nav>
+ <nav>
+  <div class="profile-container">
+    <img src="photo.jpeg" alt="Roberto Delgado Castro" class="profile-img" />
     <h1>Roberto Delgado Castro</h1>
+  </div>
+
     <ul>
       <li><a href="#biography">Biography / Biografía</a></li>
       <li><a href="#books">Books / Libros</a></li>
@@ -255,6 +283,7 @@
 
 </body>
 </html>
+
 
 
 
